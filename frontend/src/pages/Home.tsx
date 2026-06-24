@@ -157,24 +157,24 @@ export default function Home() {
         <div className="space-y-4">
           {[
             {
-              q: 'How do I activate my HP printer?',
-              a: 'Connect your HP printer to WiFi using the wireless setup menu on the printer's control panel. Download and install the HP driver from 123.hp.com or HP's official site. Run the setup wizard to complete activation. If the setup fails with an error code, our live chat agents can resolve it immediately.'
+              q: `How do I activate my HP printer?`,
+              a: `Connect your HP printer to WiFi using the wireless setup menu on the printer's control panel. Download and install the HP driver from 123.hp.com or HP's official site. Run the setup wizard to complete activation. If the setup fails with an error code, our live chat agents can resolve it immediately.`
             },
             {
-              q: 'Why does my printer say "offline" and how do I fix it?',
-              a: 'A printer showing offline usually means the connection between your computer and printer was lost. On Windows, open Devices and Printers, right-click your printer, and make sure "Use Printer Offline" is unchecked. You can also try deleting and re-adding the printer. Our agents fix offline printer errors in minutes.'
+              q: `Why does my printer say "offline" and how do I fix it?`,
+              a: `A printer showing offline usually means the connection between your computer and printer was lost. On Windows, open Devices and Printers, right-click your printer, and make sure "Use Printer Offline" is unchecked. You can also try deleting and re-adding the printer. Our agents fix offline printer errors in minutes.`
             },
             {
-              q: 'My printer driver installation failed — what should I do?',
-              a: 'Driver installation failures (including Error 303) are often caused by incomplete downloads, firewall blocks, or conflicting software. Uninstall the existing driver, restart your computer, then reinstall the latest driver. Our specialists can walk you through this step by step over live chat.'
+              q: `My printer driver installation failed — what should I do?`,
+              a: `Driver installation failures (including Error 303) are often caused by incomplete downloads, firewall blocks, or conflicting software. Uninstall the existing driver, restart your computer, then reinstall the latest driver. Our specialists can walk you through this step by step over live chat.`
             },
             {
-              q: 'How do I connect my Canon/Epson/Brother printer to WiFi?',
-              a: 'On most printers, go to Settings > Network > Wireless Setup Wizard and select your WiFi network. Enter your WiFi password when prompted. If your printer still won\'t connect, restart both the printer and router. Our agents can guide you through brand-specific WiFi activation for Canon, Epson, Brother, and all other brands.'
+              q: `How do I connect my Canon/Epson/Brother printer to WiFi?`,
+              a: `On most printers, go to Settings > Network > Wireless Setup Wizard and select your WiFi network. Enter your WiFi password when prompted. If your printer still won't connect, restart both the printer and router. Our agents can guide you through brand-specific WiFi activation for Canon, Epson, Brother, and all other brands.`
             },
             {
-              q: 'Is this an official HP / Canon / Epson support service?',
-              a: 'No. PrintSupport is an independent, third-party technical support service. We are not affiliated with or authorized by HP, Canon, Epson, Brother, Samsung, or any other printer manufacturer. We provide general printer activation and troubleshooting guidance.'
+              q: `Is this an official HP / Canon / Epson support service?`,
+              a: `No. PrintSupport is an independent, third-party technical support service. We are not affiliated with or authorized by HP, Canon, Epson, Brother, Samsung, or any other printer manufacturer. We provide general printer activation and troubleshooting guidance.`
             }
           ].map(({ q, a }) => (
             <details key={q} className="group border border-gray-200 rounded-xl overflow-hidden">
