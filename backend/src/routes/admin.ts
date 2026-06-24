@@ -1,4 +1,4 @@
-import { Router } from 'express'
+import { Router, Request } from 'express'
 import bcrypt from 'bcryptjs'
 import prisma from '../lib/prisma'
 import { authenticateToken, requireRole, AuthRequest } from '../middleware/auth'
@@ -9,7 +9,7 @@ const router = Router()
 router.use(authenticateToken, requireRole('admin'))
 
 // List all agents with active chat count
-router.get('/agents', async (_req, res) => {
+router.get('/agents', async (_req: Request, res) => {
   const agents = await prisma.user.findMany({
     where: { role: 'agent' },
     include: {
@@ -74,7 +74,7 @@ router.delete('/agents/:id', async (req, res) => {
 })
 
 // Queue: all waiting tickets
-router.get('/queue', async (_req, res) => {
+router.get('/queue', async (_req: Request, res) => {
   const tickets = await prisma.ticket.findMany({
     where: { status: 'waiting' },
     orderBy: { createdAt: 'asc' }
@@ -83,7 +83,7 @@ router.get('/queue', async (_req, res) => {
 })
 
 // All active chats across all agents
-router.get('/active', async (_req, res) => {
+router.get('/active', async (_req: Request, res) => {
   const tickets = await prisma.ticket.findMany({
     where: { status: 'active' },
     include: { assignedAgent: { select: { id: true, name: true } } },
@@ -164,7 +164,7 @@ router.get('/history', async (req, res) => {
 })
 
 // Analytics
-router.get('/analytics', async (_req, res) => {
+router.get('/analytics', async (_req: Request, res) => {
   const last7Days = Array.from({ length: 7 }, (_, i) => {
     const d = new Date()
     d.setDate(d.getDate() - i)
