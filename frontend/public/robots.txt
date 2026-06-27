@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /agent/
+Disallow: /admin/
+
+Sitemap: https://printsupport.online/sitemap.xml

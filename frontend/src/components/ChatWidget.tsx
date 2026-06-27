@@ -102,7 +102,7 @@ export default function ChatWidget() {
                   Run our diagnostic first to connect with a support agent.
                 </p>
                 <a href="/diagnose" className="btn-primary mt-4 inline-block text-sm">
-                  Start Activation
+                  Get Setup Help
                 </a>
               </div>
             )}

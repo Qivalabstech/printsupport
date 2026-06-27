@@ -6,6 +6,10 @@ import Home from './pages/Home'
 import Diagnose from './pages/Diagnose'
 import About from './pages/About'
 import Privacy from './pages/Privacy'
+import Contact from './pages/Contact'
+import Terms from './pages/Terms'
+import RefundPolicy from './pages/RefundPolicy'
+import Disclaimer from './pages/Disclaimer'
 import AgentLogin from './pages/agent/Login'
 import AgentDashboard from './pages/agent/Dashboard'
 import AdminLogin from './pages/admin/Login'
@@ -36,7 +40,11 @@ export default function App() {
               <Route path="/" element={<Home />} />
               <Route path="/diagnose" element={<Diagnose />} />
               <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="/privacy" element={<Privacy />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="/refund-policy" element={<RefundPolicy />} />
+              <Route path="/disclaimer" element={<Disclaimer />} />
             </Route>
 
             {/* Agent area */}

@@ -22,8 +22,9 @@ export default function Layout() {
               Home
             </Link>
             <Link to="/about" className="btn-ghost text-sm">About</Link>
+            <Link to="/contact" className="btn-ghost text-sm">Contact</Link>
             <Link to="/diagnose" className="btn-primary text-sm py-1.5">
-              Start Activation
+              Get Help
             </Link>
           </nav>
         </div>
@@ -33,23 +34,50 @@ export default function Layout() {
         <Outlet />
       </main>
 
-      <footer className="border-t border-gray-100 bg-gray-50 mt-auto">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-            <div className="flex items-center gap-2 text-primary-600 font-medium text-sm">
-              <Printer size={16} />
-              PrintSupport
+      <footer className="border-t border-gray-200 bg-gray-50 mt-auto">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8">
+          <div className="grid sm:grid-cols-3 gap-6 mb-6">
+            <div>
+              <div className="flex items-center gap-2 text-primary-600 font-semibold text-sm mb-2">
+                <Printer size={16} />
+                PrintSupport
+              </div>
+              <p className="text-xs text-gray-500 leading-relaxed">
+                Independent third-party printer setup and troubleshooting assistance via live chat.
+                Not affiliated with any manufacturer.
+              </p>
             </div>
-            <nav className="flex flex-wrap gap-4 text-sm text-gray-500">
-              <Link to="/about" className="hover:text-gray-800 transition-colors">About Us</Link>
-              <Link to="/privacy" className="hover:text-gray-800 transition-colors">Privacy Policy</Link>
-              <Link to="/agent/login" className="hover:text-gray-800 transition-colors">Agent Login</Link>
-            </nav>
+            <div>
+              <div className="text-xs font-semibold text-gray-700 uppercase tracking-wide mb-2">Support</div>
+              <nav className="flex flex-col gap-1.5 text-sm text-gray-500">
+                <Link to="/diagnose" className="hover:text-gray-800 transition-colors">Get Setup Help</Link>
+                <Link to="/about" className="hover:text-gray-800 transition-colors">About Us</Link>
+                <Link to="/contact" className="hover:text-gray-800 transition-colors">Contact</Link>
+              </nav>
+            </div>
+            <div>
+              <div className="text-xs font-semibold text-gray-700 uppercase tracking-wide mb-2">Legal</div>
+              <nav className="flex flex-col gap-1.5 text-sm text-gray-500">
+                <Link to="/privacy" className="hover:text-gray-800 transition-colors">Privacy Policy</Link>
+                <Link to="/terms" className="hover:text-gray-800 transition-colors">Terms of Service</Link>
+                <Link to="/refund-policy" className="hover:text-gray-800 transition-colors">Refund Policy</Link>
+                <Link to="/disclaimer" className="hover:text-gray-800 transition-colors">Disclaimer</Link>
+              </nav>
+            </div>
           </div>
-          <p className="mt-4 text-xs text-gray-400">
-            PrintSupport is an independent technical support service. We are not affiliated with, endorsed by,
-            or sponsored by HP, Canon, Epson, Brother, Samsung, or any other printer manufacturer.
-          </p>
+
+          <div className="border-t border-gray-200 pt-5">
+            <p className="text-xs text-gray-500 leading-relaxed mb-3">
+              <strong>Independent service disclosure:</strong> We are an independent third-party technical
+              support provider and are not affiliated with, endorsed by, sponsored by, or authorized by any
+              printer manufacturer including HP, Canon, Brother, Epson, Samsung, Xerox, Lexmark or others.
+              Any manufacturer names are trademarks of their respective owners, referenced only to indicate
+              compatible printer models.
+            </p>
+            <p className="text-xs text-gray-400">
+              &copy; {new Date().getFullYear()} PrintSupport. All rights reserved.
+            </p>
+          </div>
         </div>
       </footer>
 

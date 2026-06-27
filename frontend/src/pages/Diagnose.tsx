@@ -159,8 +159,8 @@ export default function Diagnose() {
               Chat with a support agent
             </h1>
             <p className="text-gray-500 text-sm mt-2 mb-8 max-w-sm mx-auto">
-              To get your <strong>{brand}</strong> printer activation completed, one of our support
-              specialists will assist you over live chat. They'll have your details ready.
+              A technician will assist you with your <strong>{brand}</strong> printer via live chat.
+              Your details below will be shared with them so you can get started right away.
             </p>
 
             <div className="bg-primary-50 border border-primary-100 rounded-xl p-4 mb-8 text-left space-y-2">

@@ -22,9 +22,27 @@ const io = new Server(httpServer, {
 
 setIo(io)
 
-app.use(helmet())
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'"],
+      styleSrc: ["'self'", "'unsafe-inline'"],
+      imgSrc: ["'self'", "data:"],
+      fontSrc: ["'self'"],
+      connectSrc: ["'self'"],
+      frameAncestors: ["'none'"],
+      baseUri: ["'self'"],
+      formAction: ["'self'"]
+    }
+  },
+  hsts: { maxAge: 63072000, includeSubDomains: true, preload: true },
+  referrerPolicy: { policy: 'strict-origin-when-cross-origin' },
+  permittedCrossDomainPolicies: false,
+  crossOriginEmbedderPolicy: false
+}))
 app.use(cors({ origin: allowedOrigin, credentials: true }))
-app.use(express.json())
+app.use(express.json({ limit: '100kb' }))
 
 app.get('/health', (_req, res) => res.json({ ok: true }))
 app.use('/api/auth', authRoutes)
